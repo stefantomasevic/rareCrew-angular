@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Employee Name</th>
+                        <th>Total Hours</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let zaposleni of groupedData" [class.table-danger]="zaposleni.TotalHours < 100">
+                        <td>{{ zaposleni.EmployeeName }}</td>
+                        <td>{{ zaposleni.TotalHours }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <h2>Invalid Entries</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Employee Name</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Entry Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let invalidEntry of invalidEntries">
+        <td>{{ invalidEntry.EmployeeName }}</td>
+        <td>{{ invalidEntry.StarTimeUtc }}</td>
+        <td>{{ invalidEntry.EndTimeUtc }}</td>
+        <td>{{ invalidEntry.EntryNotes }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
